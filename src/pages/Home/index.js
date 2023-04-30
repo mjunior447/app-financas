@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
+import Actions from '../../components/Actions';
 import Balance from '../../components/Balance';
 import Header from '../../components/Header';
 import Movements from '../../components/Movements';
@@ -17,14 +18,14 @@ const list = [
         label: 'Pix cliente X',
         value: '2.500,00',
         date: '21/06/2022',
-        type: 1 // receitas / emtradas
+        type: 1 // receitas / entradas
     },
     {
         id: 3,
         label: 'Salário',
         value: '7.200,00',
         date: '03/01/2023',
-        type: 1 // receitas / emtradas
+        type: 1 // receitas / entradas
     }
 ]
 
@@ -32,7 +33,11 @@ export default function Home() {
   return (
     <View style={styles.container}>
         <Header name='Mauricio Junior' />
+
         <Balance balance='9.250.90' expenses='-527,00' />
+
+        <Actions />
+
         <Text style={styles.title}>Últimas movimentações</Text>
 
         <FlatList
